@@ -22,7 +22,9 @@ Then select Javascript with NO Eslint and install dependencies with npm
 
 #### Step 2
 
-`firebase use --add`
+```
+firebase use --add
+```
 
 Then select the project that contains the app that should receive the push notifications.
 
@@ -36,7 +38,9 @@ cd ..
 
 # Deployment
 
-`./gradlew deploy`
+```
+./gradlew deploy
+```
 
 # License
 
