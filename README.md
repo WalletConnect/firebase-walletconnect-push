@@ -1,40 +1,52 @@
-What?
-=====
+# What?
 
 This is a wallet connect push server you can deploy as a firebase function.
 
-Deployment
-==========
+# Setup
 
-Step 0:
+#### Step 0
 
 Install firebase-tools (only needed if not yet installed).
+run:
 
- `npm install -g firebase-tools`
+```
+npm install -g firebase-tools
+```
 
-Step 1:
+#### Step 1
 
 run:
 
- `firebase use --add`
+```
+firebase init
+```
+
+Then select Javascript with NO Eslint and install dependencies with npm
+
+#### Step 2
+
+run:
+
+`firebase use --add`
 
 Then select the project that contains the app that should receive the push notifications.
 
-Step 2:
+#### Step 3
 
 run:
 
- ```
- cd functions
- npm install
- cd ..
- ```
+```
+cd functions
+npm install
+cd ..
+```
 
-Step 3:
+# Deployment
 
- `./gradlew deploy`
+run:
 
-License
-=======
+`./gradlew deploy`
+
+# License
 
 MIT
