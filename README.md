@@ -13,7 +13,7 @@ run:
 npm install -g firebase-tools
 ```
 
-#### Step 1
+#### Step 1
 
 run:
 
