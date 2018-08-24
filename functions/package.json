@@ -1,0 +1,11 @@
+{
+  "name": "functions",
+  "description": "Firebase push for WalletConnect",
+  "dependencies": {
+    "firebase-admin": "^5.12.1",
+    "firebase-functions": "^2.0.5",
+    "kotlin": "^1.2.61"
+  },
+  "main": "build/index.js",
+  "private": true
+}
