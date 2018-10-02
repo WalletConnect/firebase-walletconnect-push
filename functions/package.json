@@ -12,15 +12,15 @@
     "google",
     "cloud"
   ],
+  "scripts": {
+    "serve": "firebase serve --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
   "author": "WalletConnect <walletconnect.org>",
   "license": "MIT",
-  "directories": {
-    "lib": "dist",
-    "test": "test"
-  },
-  "files": [
-    "dist"
-  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/walletconnect/firebase-walletconnect-push.git"
