@@ -6,9 +6,16 @@ const admin = require('firebase-admin')
 admin.initializeApp()
 
 exports.push = functions.https.onRequest(async (req, res) => {
-  const fcmToken = req.body.fcmToken
-  if (!fcmToken) {
-    res.status(500).send('Error: fcmToken is required')
+  const pushType = req.body.pushType
+  if (!pushType) {
+    res.status(500).send('Error: pushType is required')
+  } else if (pushType.toLowerCase() !== 'fcm') {
+    res.status(500).send(`Push type ${pushType} is not suported`)
+  }
+
+  const pushToken = req.body.pushToken
+  if (!pushToken) {
+    res.status(500).send('Error: pushToken is required')
   }
 
   const transactionId = req.body.transactionId
@@ -29,7 +36,7 @@ exports.push = functions.https.onRequest(async (req, res) => {
   admin
     .messaging()
     .send({
-      token: fcmToken,
+      token: pushToken,
       notification: {
         title: 'Transaction',
         body: dappName + ' is requesting transaction to be signed'
