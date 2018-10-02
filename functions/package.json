@@ -1,17 +1,19 @@
 {
   "name": "firebase-walletconnect-push",
   "description": "Push notification service for Firebase Cloud Functions",
-  "main": "build/index.js",
+  "main": "dist/index.js",
   "private": true,
   "keywords": [
-    "ethereum",
-    "parser",
-    "uri",
-    "standard"
+    "walletconnect",
+    "firebase",
+    "push",
+    "serverless",
+    "functions",
+    "google",
+    "cloud"
   ],
   "author": "WalletConnect <walletconnect.org>",
   "license": "MIT",
-  "main": "dist/index.js",
   "directories": {
     "lib": "dist",
     "test": "test"
