@@ -10,7 +10,7 @@ exports.push = functions.https.onRequest(async (req, res) => {
   if (!pushType) {
     res.status(500).send('Error: pushType is required')
   } else if (pushType.toLowerCase() !== 'fcm') {
-    res.status(500).send(`Push type ${pushType} is not suported`)
+    res.status(500).send('Push type ' + pushType + ' is not suported')
   }
 
   const pushToken = req.body.pushToken
@@ -38,8 +38,7 @@ exports.push = functions.https.onRequest(async (req, res) => {
     .send({
       token: pushToken,
       notification: {
-        title: 'Transaction',
-        body: dappName + ' is requesting transaction to be signed'
+        body: 'New call request from ' + dappName
       },
       data: {
         sessionId,
