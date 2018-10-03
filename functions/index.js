@@ -5,7 +5,7 @@ const admin = require('firebase-admin')
 
 admin.initializeApp()
 
-exports.push = functions.https.onRequest(async (req, res) => {
+exports.push = functions.https.onRequest(async function (req, res) {
   const pushType = req.body.pushType
   if (!pushType) {
     res.status(500).send('Error: pushType is required')
@@ -18,9 +18,9 @@ exports.push = functions.https.onRequest(async (req, res) => {
     res.status(500).send('Error: pushToken is required')
   }
 
-  const transactionId = req.body.transactionId
-  if (!transactionId) {
-    res.status(500).send('Error: transactionId is required')
+  const callId = req.body.callId
+  if (!callId) {
+    res.status(500).send('Error: callId is required')
   }
 
   const sessionId = req.body.sessionId
@@ -33,16 +33,18 @@ exports.push = functions.https.onRequest(async (req, res) => {
     res.status(500).send('Error: dappName is required')
   }
 
+  const body = 'New call request from ' + dappName
+
   admin
     .messaging()
     .send({
       token: pushToken,
       notification: {
-        body: 'New call request from ' + dappName
+        body: body
       },
       data: {
-        sessionId,
-        transactionId
+        sessionId: sessionId,
+        callId: callId
       }
     })
     .then(() => {
