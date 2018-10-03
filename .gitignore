@@ -2,3 +2,4 @@
 build/
 firebase.json
 node_modules/
+firebase-debug.log

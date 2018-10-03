@@ -2,8 +2,10 @@
   "name": "firebase-walletconnect-push",
   "version": "0.7.0",
   "description": "Push notification service for Firebase Cloud Functions",
-  "main": "build/index.js",
   "private": true,
+  "engines": {
+    "node": "8"
+  },
   "keywords": [
     "walletconnect",
     "firebase",
