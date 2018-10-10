@@ -14,6 +14,8 @@ npm install -g firebase-tools
 
 #### Step 1
 
+Run the following command to initiate firebase
+
 ```
 firebase use --add
 ```
@@ -22,16 +24,24 @@ Then select the project that contains the app that should receive the push notif
 
 #### Step 2
 
+Change to functions directory
+
 ```
 cd functions
+```
+
+#### Step 3
+
+Install dependencies
+
+```
 npm install
-cd ..
 ```
 
 # Deployment
 
 ```
-./gradlew deploy
+npm run deploy
 ```
 
 # License
