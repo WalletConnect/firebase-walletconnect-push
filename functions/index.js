@@ -50,7 +50,8 @@ exports.push = functions.https.onRequest(async function (req, res) {
     .then(() => {
       res.status(200).send('Successfully pushed notification to device')
     })
-    .catch(() => {
+    .catch((error) => {
+      console.error(error)
       res.status(500).send('Error: Failed to push notification to device')
     })
 })
