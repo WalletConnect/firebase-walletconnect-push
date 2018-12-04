@@ -28,7 +28,12 @@ exports.push = functions.https.onRequest(async function (req, res) {
     res.status(500).send('Error: sessionId is required')
   }
 
-  const body = 'New Request'
+  const dappName = req.body.dappName
+  if (!dappName) {
+    res.status(500).send('Error: dappName is required')
+  }
+
+  const body = 'New call request from ' + dappName
 
   admin
     .messaging()
