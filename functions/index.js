@@ -39,9 +39,6 @@ exports.push = functions.https.onRequest(async function (req, res) {
     .messaging()
     .send({
       token: pushToken,
-      notification: {
-        body: body
-      },
       data: {
         sessionId: sessionId,
         callId: callId
