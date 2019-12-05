@@ -3,6 +3,7 @@
   "version": "0.7.11",
   "description": "Push notification service for Firebase Cloud Functions",
   "private": true,
+  "main": "build/index.js",
   "engines": {
     "node": "8"
   },
@@ -16,10 +17,11 @@
     "cloud"
   ],
   "scripts": {
-    "serve": "firebase serve --only functions",
+    "build": "tsc",
+    "serve": "concurrently --kill-others 'tsc --watch --preserveWatchOutput' 'firebase serve --only functions'",
     "shell": "firebase functions:shell",
-    "start": "npm run shell",
-    "deploy": "firebase deploy --only functions",
+    "start": "npm run serve",
+    "deploy": "rm -rf ./build && firebase deploy --only functions",
     "logs": "firebase functions:log"
   },
   "author": "WalletConnect <walletconnect.org>",
@@ -32,15 +34,23 @@
     "url": "https://github.com/walletconnect/firebase-walletconnect-push/issues"
   },
   "devDependencies": {
+    "@types/express": "^4.17.2",
+    "@types/hapi__joi": "^16.0.4",
+    "@types/node": "^8.10.59",
+    "concurrently": "^5.0.0",
     "eslint": "^5.6.0",
     "eslint-config-standard": "^12.0.0",
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-node": "^7.0.1",
     "eslint-plugin-promise": "^4.0.1",
-    "eslint-plugin-standard": "^4.0.0"
+    "eslint-plugin-standard": "^4.0.0",
+    "firebase-tools": "^7.9.0",
+    "typescript": "^3.7.3"
   },
   "dependencies": {
-    "firebase-admin": "^6.0.0",
-    "firebase-functions": "^2.0.5"
+    "@google-cloud/firestore": "^2.6.0",
+    "@hapi/joi": "^16.1.8",
+    "firebase-admin": "^8.8.0",
+    "firebase-functions": "^3.3.0"
   }
 }
