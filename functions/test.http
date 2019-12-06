@@ -26,5 +26,5 @@ Content-Type: application/json
 
 {
     "topic": "c50901f1-ca34-44da-9c8b-4a79e0cbbd11",
-    "webhook": "https://google.ro" 
+    "webhook": "http://webhook.site/906029a8-dc2a-4004-a10a-0900fd0743f6" 
 }
