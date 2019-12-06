@@ -32,10 +32,18 @@ Go to this [link](https://console.firebase.google.com/project/_/settings/service
 npm run deploy
 ```
 
-**Step 4 -** Visit this link and enable Firebase Cloud Messaging API
+**Step 6 -** Visit this link and enable Firebase Cloud Messaging API
 
 Open 
 [https://console.developers.google.com/apis/api/fcm.googleapis.com/overview?project=_](https://console.developers.google.com/apis/api/fcm.googleapis.com/overview?project=_) select your project then enable Firebase Cloud Messaging API.
+
+Features:
+- [X] registration and push notification endpoints 
+- [X] integration with FCM, for push notifications
+- [ ] integration with PushKit for better support on iOS
+- [ ] add logging on errors, for monitorig purposes
+- [ ] scheduled function for database cleanup
+- [ ] github workflow for automatic function deployment
 
 # License
 

@@ -2,7 +2,7 @@ POST http://localhost:5000/moonlet-beta/us-central1/push/new
 Content-Type: application/json
 
 {
-    "bridge": "https://bridge.walletconn",
+    "bridge": "https://bridge.walletconnect.org",
     "topic": "c50901f1-ca34-44da-9c8b-4a79e0cbbd11",
     "type": "fcm",
     "token": "123asd",
@@ -17,4 +17,14 @@ Content-Type: application/json
 
 {
     "topic": "c50901f1-ca34-44da-9c8b-4a79e0cbbd11"
+}
+
+###
+
+POST https://bridge.walletconnect.org/subscribe
+Content-Type: application/json
+
+{
+    "topic": "c50901f1-ca34-44da-9c8b-4a79e0cbbd11",
+    "webhook": "https://google.ro" 
 }
