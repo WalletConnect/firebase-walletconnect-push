@@ -1,0 +1,30 @@
+POST http://localhost:5000/moonlet-beta/us-central1/push/new
+Content-Type: application/json
+
+{
+    "bridge": "https://bridge.walletconnect.org",
+    "topic": "c50901f1-ca34-44da-9c8b-4a79e0cbbd11",
+    "type": "fcm",
+    "token": "123asd",
+    "peerName": "<peer_name>",
+    "language": "<language_code>"
+}
+
+###
+
+POST http://localhost:5000/moonlet-beta/us-central1/push
+Content-Type: application/json
+
+{
+    "topic": "c50901f1-ca34-44da-9c8b-4a79e0cbbd11"
+}
+
+###
+
+POST https://bridge.walletconnect.org/subscribe
+Content-Type: application/json
+
+{
+    "topic": "c50901f1-ca34-44da-9c8b-4a79e0cbbd11",
+    "webhook": "http://webhook.site/906029a8-dc2a-4004-a10a-0900fd0743f6" 
+}
